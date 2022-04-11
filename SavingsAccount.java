@@ -14,10 +14,11 @@ public class SavingsAccount {
 	
 	Scanner input = new Scanner(System.in);
 	
+	//private data fields
 	private double balance;
 	private int id;
 	private double annualIntRate;
-	private String dateEstablished;
+	private Date date = new Date();
 	
 	//create default account constructor
 	public SavingsAccount() {
@@ -60,7 +61,6 @@ public class SavingsAccount {
 	
 	//accessor methods for dateEstablished
 	public void getDateEstablished() {
-		java.util.Date date = new java.util.Date();
 		System.out.println(date.toString());
 	}
 	
