@@ -3,8 +3,11 @@ import java.util.Scanner;
 
 public class SavingsAccountRunner {
 	
+	/*This class collects the data from the user and insantiates an object from the SavingsAccount class*/
+	
 	public static void main(String[] args) {
 		
+		/*Boolean loopContinue ensures that the loop when choosing an option ends right when an option is chosen*/
 		boolean loopContinue = true;
 		int id;
 		double initialBalance, annualIntRate;
@@ -21,10 +24,11 @@ public class SavingsAccountRunner {
 		System.out.print("\nEnter your annual interest rate: ");
 		annualIntRate = input.nextDouble();
 		
-		//create new object
+		//Create new object
 		SavingsAccount yourAccount = new SavingsAccount(id, initialBalance, 
 				annualIntRate);
 		
+		//Loop for the four options
 		do {
 			System.out.print("\n=============================="
 					+ "\n=        OPTIONS BELOW       ="
@@ -33,9 +37,10 @@ public class SavingsAccountRunner {
 					+ "\n3. View Account Details\n4. Exit"
 					+ "\nEnter your selection \n");
 			
-		//error checking
+			
 			int menuOption = input.nextInt();
 			
+			//Check for invalid input
 			while (menuOption < 1 || menuOption > 4) {
 				System.out.print("\nINVALID SELECTION. TRY AGAIN!");
 				menuOption = input.nextInt();
