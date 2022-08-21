@@ -1,23 +1,17 @@
-/*
- * Date:        2/3/2022
- * File:        SavingsAccount.java
- * Description: A program used on an ATM that can run deposits, show weekly
- * 				interest rates, and view account details. This class features
- * 				data field encapsulation, constructors, accessors, and mutators
- * 				It also has a method to calculate weekly interest rate and
- * 				a method to calculate balance after deposit is added.
- */
-
 import java.util.Scanner;
+
 
 public class SavingsAccount {
 	
+	//SavingsAccount class and getter/setter methods. Methods "getWeeklyIntRate()" and "deposit()" (calculates the total balance of an account) are in this class
+	//Also has a getDateEstablished method to print a string of date an account was made.
 	Scanner input = new Scanner(System.in);
 	
 	//private data fields
 	private double balance;
 	private int id;
 	private double annualIntRate;
+	//Date object for the getDateEstablished method
 	private Date date = new Date();
 	
 	//create default account constructor
@@ -25,7 +19,7 @@ public class SavingsAccount {
 		
 	}
 	
-	//constructor with specified id and initial balance
+	//Constructor that takes user's account ID, initial balance, and current interest rate.
 	public SavingsAccount(int specifiedId, double initialBalance, double intRate) {
 				balance = initialBalance;
 				id = specifiedId;
@@ -59,18 +53,18 @@ public class SavingsAccount {
 		this.annualIntRate = annualIntRate;
 	}
 	
-	//accessor methods for dateEstablished
+	//accessor methods for dateEstablished. There is no setter method since the data of the date shouldn't be changed.
 	public void getDateEstablished() {
 		System.out.println(date.toString());
 	}
 	
-	//method that returns weekly interest rate
+	//Method that calculates the weekly interest rate
 	public double getWeeklyIntRate() {
 		double weeklyInterestRate = (annualIntRate/100)/52;
 		return (weeklyInterestRate * balance);
 	}
 	
-	//method that deposits amount into account
+	//Method that deposits money into an account and calculates the total.
 	public double deposit(double deposit) {
 		balance += deposit;
 		return balance;
