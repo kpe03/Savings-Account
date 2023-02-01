@@ -1,11 +1,9 @@
 import java.util.Scanner;
 
-
+/************************
+* Savings Account Class *
+*************************/
 public class SavingsAccount {
-	
-	//SavingsAccount class and getter/setter methods. Methods "getWeeklyIntRate()" and "deposit()" (calculates the total balance of an account) are in this class
-	//Also has a getDateEstablished method to print a string of date an account was made.
-	Scanner input = new Scanner(System.in);
 	
 	//private data fields
 	private double balance;
